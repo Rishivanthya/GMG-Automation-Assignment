@@ -28,10 +28,7 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
-	/**
-	 * @author jussaragranja
-	 * Class represents the page Bootstrap Date Picker from site SeleniumEasy
-	 */
+	
 
 	public class APIValidation_Steps extends PageBase {
 		

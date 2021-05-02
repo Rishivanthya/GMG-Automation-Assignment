@@ -11,10 +11,7 @@ import org.openqa.selenium.support.FindBy;
 
 import br.com.gmg.support.Log;
 
-/**
- * @author jussaragranja
- * Class represents the page Home from site SeleniumEasy
- */
+
 
 public class PageHome extends PageBase {
 

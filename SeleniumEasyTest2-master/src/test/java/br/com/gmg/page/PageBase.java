@@ -13,10 +13,6 @@ import java.util.List;
 
 import static org.junit.Assert.fail;
 
-/**
- * @author jussaragranja
- * Class Page Actions
- */
 
 public class PageBase {
 

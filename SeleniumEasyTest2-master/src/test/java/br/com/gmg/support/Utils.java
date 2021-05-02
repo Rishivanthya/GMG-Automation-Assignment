@@ -5,11 +5,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-/**
- * @author jussaragranja
- * support methods for optimizing code
- */
-
 public abstract class Utils {
 
 
