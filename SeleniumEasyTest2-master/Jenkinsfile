@@ -1,7 +1,7 @@
 node {
     def mvnHome
     stage('Git') {
-        git 'https://github.com/jussaragranja/SeleniumEasyTest2.git'
+        git 'https://github.com/Rishivanthya/GMG-Automation-Assignment.git'
         mvnHome = tool 'M3'
     }
     stage('Test') {
@@ -20,6 +20,6 @@ node {
             properties: [],
             reportBuildPolicy: 'ALWAYS',
             results: [[path: 'target/surefire-reports']]
-        ])
+        ]
     }
 }
