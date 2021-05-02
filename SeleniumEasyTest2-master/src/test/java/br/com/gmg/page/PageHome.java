@@ -1,8 +1,6 @@
-package br.com.seleniumeasytest.jussara.page;
+package br.com.gmg.page;
 
-import br.com.seleniumeasytest.jussara.support.Log;
-
-import static br.com.seleniumeasytest.jussara.support.Driver.driver;
+import static br.com.gmg.support.Driver.driver;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
@@ -10,6 +8,8 @@ import java.util.List;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import br.com.gmg.support.Log;
 
 /**
  * @author jussaragranja

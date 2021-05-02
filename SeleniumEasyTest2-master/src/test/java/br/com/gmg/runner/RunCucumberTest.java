@@ -1,4 +1,4 @@
-package br.com.seleniumeasytest.jussara.runner;
+package br.com.gmg.runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

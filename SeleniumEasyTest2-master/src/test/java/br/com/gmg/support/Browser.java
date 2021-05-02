@@ -1,9 +1,5 @@
-package br.com.seleniumeasytest.jussara.support;
+package br.com.gmg.support;
 
-/**
- * @author jussaragranja
- * Class with variables for the name of browsers
- */
 
 public class Browser {
 

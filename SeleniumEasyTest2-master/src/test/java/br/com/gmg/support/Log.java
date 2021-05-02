@@ -1,11 +1,7 @@
-package br.com.seleniumeasytest.jussara.support;
+package br.com.gmg.support;
 
 import org.slf4j.Logger;
 
-/**
- * @author jussaragranja
- * Class for log
- */
 
 public class Log {
 	

@@ -1,13 +1,10 @@
-package br.com.seleniumeasytest.jussara.support;
+package br.com.gmg.support;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-/**
- * @author jussaragranja
- * Conversions
- */
+
 
 public class Conversions {
 

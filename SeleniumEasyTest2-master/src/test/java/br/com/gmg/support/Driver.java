@@ -1,4 +1,4 @@
-package br.com.seleniumeasytest.jussara.support;
+package br.com.gmg.support;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,11 +7,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.io.File;
 import java.net.URL;
 
-/**
- * @author jussaragranja
- * Search for the correct driver within the project, according to what was set in properties
- * and according to the operating system that the tests are being run
- */
 
 public class Driver {
 	
@@ -46,11 +41,6 @@ public class Driver {
 		return (OS.indexOf("win") >= 0);
 	}
 
-	//detectando Sistema Operacional
-	public static boolean isUnix(){
-		return (OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0 || OS
-				.indexOf("aix") > 0);
-	}
 
 	public static boolean isMac(){
 		return (OS.indexOf("mac") >= 0);
@@ -61,8 +51,6 @@ public class Driver {
 		File file = null;
 		if(isWindows()){
 			file = new File(Property.CHROME_DRIVE_PATH);
-		}else if(isUnix()) {
-			file = new File(Property.CHROME_DRIVE_LINUX_PATH);
 		}
 		else if(isMac()){
 			file = new File(Property.CHROME_DRIVE_MAC_PATH);

@@ -1,23 +1,20 @@
 package GMG.com.website.pages;
 
-import br.com.seleniumeasytest.jussara.page.PageBase;
-import br.com.seleniumeasytest.jussara.support.Log;
-import br.com.seleniumeasytest.jussara.support.Utils;
+import br.com.gmg.page.PageBase;
+import br.com.gmg.support.Log;
+import br.com.gmg.support.Utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
-import static br.com.seleniumeasytest.jussara.support.Driver.driver;
-
+import static br.com.gmg.support.Driver.driver;
 import static org.junit.Assert.assertEquals;
+
 
 import java.util.List;
 
-/**
- * @author jussaragranja
- * Class represents the page Bootstrap Date Picker from site SeleniumEasy
- */
 
 public class Homepageverification extends PageBase {
 
@@ -45,8 +42,8 @@ public class Homepageverification extends PageBase {
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[4]/div/div[2]/div/div[6]/div[2]/div/div/div[4]/div/button/span[1]")
     private WebElement Color;
     
-    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[4]/div/div[2]/div/div[2]/div/div/a/span")
-    private WebElement AddtoBag;
+   @FindBy(xpath = "//*[@id=\"consent-tracking\"]/div/div/button[1]")
+   private WebElement Agree;
     
     @FindBy(xpath = "/html/body/div[1]/header/div[1]/nav/div[1]/div/div[3]/div/div[2]/a/span[1]")
     private WebElement productConfiramationOverlay;
@@ -57,9 +54,44 @@ public class Homepageverification extends PageBase {
     @FindBy(xpath = "/html/body/div[1]/header/div[1]/nav/div[1]/div/div[3]/div/div[2]/a")
     private WebElement ClickonCart;
     
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[4]/div/div[2]/div/div[7]/div/div/div/div[2]/button")
+    private WebElement AddtoBag;
+ 
+    @FindBy(id = "select2-vendorSize-shoesize-container")
+    private WebElement AddSize;
     
-  
+    @FindBy(xpath = "/html/body/div[1]/header/div[1]/nav/div[1]/div/div[3]/div/div[3]/div[1]/button/span[1]")
+    private WebElement Addcartbutton;
+   
     
+    
+    
+    
+    @FindBy(id = "guest-email")
+    private WebElement EnterEmailfield;
+    
+    @FindBy(xpath = "//*[@id=\"register\"]/form[2]/button")
+    private WebElement GuestLogin;
+    
+    @FindBy(id = "shippingPhoneNumberdefault")
+    private WebElement MobileNumber;
+    
+    @FindBy(id = "shippingFirstNamedefault")
+    private WebElement Firstname;
+    
+    @FindBy(id = "shippingLastNamedefault")
+    private WebElement Lastname;
+    
+    @FindBy(id = "shippingAddressOnedefault")
+    private WebElement Addressline1;
+    
+    @FindBy(id = "shippingAddressTwodefault")
+    private WebElement Addressline2;
+    
+    
+    @FindBy(id = "shippingZipCodedefault")
+    private WebElement Zipcode;
+   
     public void clickMenMenubutton() throws InterruptedException {
 		// TODO Auto-generated method stub
 		
@@ -98,7 +130,10 @@ public class Homepageverification extends PageBase {
 		
 	}
 	
-	
+	public void Acceptbutton()
+	{
+		click(Agree);
+	}
 	
 	
 	
@@ -122,33 +157,86 @@ public void clickonCart()
     
     
 
-    public void verifyAddedProductToCartPage(String productName) {
-       waitForElement(productConfiramationOverlay);
-       assertEquals(productNameOnCart, productName);
+    public void verifyAddedProductToCartPage() throws InterruptedException {
+       //waitForElement(productConfiramationOverlay);
+      click(Addcartbutton);
+      Thread.sleep(1000);
     }
     
     
     public void SelectSize() throws InterruptedException
     {
-    Thread.sleep(4000);
-    String options = driver.findElement(By.xpath("//span[@class='select2- results']")).getText();
-    System.out.println(options);
-
-    for (int i = 0; i < options.length(); i++) {
-       WebElement cityName = driver.findElement(By.xpath("//span[@class='select2-results']/ul/li[" + (i+1) + "]"));
-       try{
-           if (cityName.getText().equals("Chandigarh")) {
-                cityName.click();
-                break;
-           }
-       }catch (Exception e){
-           System.out.println("ABC");
-       }
-    }
+    	
+    	 Select se = new Select(driver.findElement(By.id("vendorSize-shoesize")));
+        
+    	   se.selectByVisibleText("EU 40");
+    	 
+    	   
+     
     
-    
+        }
+   
+  public void Checkout() throws InterruptedException
+  {
+	  Thread.sleep(1000);
+	  //driver.findElement(By.xpath("/html/body/div[1]/header/div[1]/nav/div[1]/div/div[3]/div/div[3]/div[2]/div[2]/div[2]/div[3]/div[2]/a")).click();
+	  Thread.sleep(5000);
+   
+  }
     
 
 
-    }
+public void EnterEmail()
+{
+	EnterEmailfield.sendKeys("rishi_vanthya@yahoo.com");
 }
+    
+
+
+public void ClickonContinueasGuest()
+{
+	click(GuestLogin);
+}
+
+
+public void Contactdetails()
+{
+	
+	
+	Select Title = new Select(driver.findElement(By.id("select2-shippingSalutationdefault-container")));
+    
+	   Title.selectByVisibleText("Mrs");
+	   
+	   MobileNumber.sendKeys("567773832");
+	   Firstname.sendKeys("Rishivanthya");
+	   Lastname.sendKeys("GTS");
+	   
+	   
+	   
+}
+
+
+public void ShippingAddress()
+{
+	   
+	   Addressline1.sendKeys("Dubai JVC");
+	   Addressline2.sendKeys("JVC flat 710");
+	   
+	Select Region = new Select(driver.findElement(By.id("shippingCitydefault")));
+	    
+	   Region.selectByValue("Dubai");
+	   
+	Select Area = new Select(driver.findElement(By.id("shippingAreadefault")));
+	    
+	   Area.selectByValue("Al Bada");
+	   Zipcode.sendKeys("6878");
+	   
+}   
+	
+}
+
+
+
+
+    
+

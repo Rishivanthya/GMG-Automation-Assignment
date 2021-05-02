@@ -2,19 +2,16 @@ package GMG.com.website.pages;
 
 
 	
-	import br.com.seleniumeasytest.jussara.page.PageBase;
-	import br.com.seleniumeasytest.jussara.support.Log;
-	import br.com.seleniumeasytest.jussara.support.Utils;
-	import org.openqa.selenium.WebElement;
+	import br.com.gmg.page.PageBase;
+import br.com.gmg.support.Log;
+import br.com.gmg.support.Utils;
+
+import org.openqa.selenium.WebElement;
 	import org.openqa.selenium.support.FindBy;
 
-	import static br.com.seleniumeasytest.jussara.support.Driver.driver;
-	import static org.junit.Assert.assertEquals;
+import static br.com.gmg.support.Driver.driver;
+import static org.junit.Assert.assertEquals;
 
-	/**
-	 * @author jussaragranja
-	 * Class represents the page Bootstrap Date Picker from site SeleniumEasy
-	 */
 
 	public class PLPPageValidation extends PageBase {
 
@@ -27,6 +24,10 @@ package GMG.com.website.pages;
 	    @FindBy(xpath = "//*[@id=\"sandbox-container1\"]/div/input")
 	    private WebElement date;
 
+	    
+	    
+	    
+	    
 	    public void assertPageTitle(){
 	        assertEquals("All men's. Right here.", driver.getTitle());
 	    }

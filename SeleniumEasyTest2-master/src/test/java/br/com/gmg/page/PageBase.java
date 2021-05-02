@@ -1,11 +1,12 @@
-package br.com.seleniumeasytest.jussara.page;
+package br.com.gmg.page;
 
-import br.com.seleniumeasytest.jussara.support.Driver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import br.com.gmg.support.Driver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ import static org.junit.Assert.fail;
 public class PageBase {
 
     private static final int LOAD_TIMEOUT = 500;
-
+   
     public PageBase(){
 		PageFactory.initElements(Driver.driver, this);
     }

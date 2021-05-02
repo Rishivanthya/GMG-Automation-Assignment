@@ -1,16 +1,12 @@
-package br.com.seleniumeasytest.jussara.steps;
+package br.com.gmg.steps;
 
-import br.com.seleniumeasytest.jussara.page.PageBase;
-import br.com.seleniumeasytest.jussara.support.Driver;
-import br.com.seleniumeasytest.jussara.support.Property;
+import br.com.gmg.page.PageBase;
+import br.com.gmg.support.Driver;
+import br.com.gmg.support.Property;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
 
-/**
- * @author jussaragranja
- * Methods to be performed before and after testing
- */
 
 public class Hooks extends PageBase {
 

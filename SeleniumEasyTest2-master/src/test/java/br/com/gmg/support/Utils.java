@@ -1,4 +1,4 @@
-package br.com.seleniumeasytest.jussara.support;
+package br.com.gmg.support;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

@@ -2,7 +2,7 @@ package GMG.com.website.steps;
 
 import GMG.com.website.pages.Homepageverification;
 import GMG.com.website.pages.PLPPageValidation;
-import br.com.seleniumeasytest.jussara.page.PageHome;
+import br.com.gmg.page.PageHome;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
